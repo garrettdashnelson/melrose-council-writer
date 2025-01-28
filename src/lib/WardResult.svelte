@@ -36,12 +36,25 @@
     </div>
     <div class="bg-white shadow rounded-lg p-6">
         <h2 class="text-xl font-semibold mb-4">Send an email to your councilor</h2>
-        <p class="text-gray-700 mb-4">
-          Dear Councilor {councilors.find(c => c.ward === +ward.WARD).councilor},
-        </p>
-        <p class="text-gray-700">
-          I live at {geocodedLocation.inputAddress} in Ward {ward.WARD}. I strongly believe that we should build a marble statue of Finn McSweeney in the center of the city.
-        </p>
+        <div id="email-message">
+            
+            <p class="text-gray-700 mb-4">
+              Dear Councilor {councilors.find(c => c.ward === +ward.WARD).councilor},
+            </p>
+            <p class="text-gray-700">
+              I live at {geocodedLocation.inputAddress} in Ward {ward.WARD}. I strongly believe that we should build a marble statue of Finn McSweeney in the center of the city.
+            </p>
+        </div>
+      <button 
+        onclick={() => {
+          const text = document.getElementById('email-message').innerText;
+          navigator.clipboard.writeText(text);
+        }}
+        class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+      >
+        Copy message to clipboard
+      </button>
+
       </div>
 
   {:else}
