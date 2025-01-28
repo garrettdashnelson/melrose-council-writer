@@ -27,9 +27,12 @@
       <p class="text-gray-700 mb-4">
         I think this address is in <strong>Ward {ward.WARD} (Precinct {ward.PRECINCT})</strong>.
       </p>
-      <p class="text-gray-700">
+      <p class="text-gray-700 mb-4">
         The ward councilor for Ward {ward.WARD} is <strong>{councilors.find(c => c.ward === +ward.WARD).councilor}</strong>. Their email is <a class="text-blue-500 hover:underline" href="mailto:{councilors.find(c => c.ward === +ward.WARD).email}">{councilors.find(c => c.ward === +ward.WARD).email}</a>.
       </p>
+      <p class="text-gray-500 text-sm italic">
+        This is based on a geographic lookup of your address. It should not be considered a legal or official determination of your ward. For official information about voting and council representation, see the <a class="text-blue-500 hover:underline" target="_blank" href="https://www.cityofmelrose.org/elections-melrose">City Elections Department</a>.
+        </p>
     </div>
     <div class="bg-white shadow rounded-lg p-6">
         <h2 class="text-xl font-semibold mb-4">Send an email to your councilor</h2>
