@@ -1,0 +1,1 @@
+export const geocodedLocation = $state({status: 'blank', result: null, inputAddress: ''});
